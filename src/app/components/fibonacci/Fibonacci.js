@@ -33,7 +33,7 @@ const Fibonacci = () => {
   };
 
   return (
-    <div className="h-full flex flex-col items-center justify-center">
+    <div className="h-full flex flex-col items-center my-10 ">
       <h1 className="text-2xl font-bold mb-4 text-slate-500">
         피보나치 호출 횟수 계산기
       </h1>

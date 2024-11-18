@@ -1,17 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import Fibonacci from "./Fibonacci";
-import VideoPlayer from "./VideoPlayer";
+import Fibonacci from "./fibonacci/Fibonacci";
+import VideoPlayer from "./videoPlayer/VideoPlayer";
 
 export default function TabComponent() {
   const [selectedTab, setSelectedTab] = useState("fibonacci"); // 첫 번째 탭을 기본값으로 설정
+  const categoryTabs = ["fibonacci", "video"];
 
   return (
     <div className="flex flex-col h-screen">
       {/* 탭 버튼 */}
       <div className="fixed top-0 left-0 flex items-end h-[60px] pt-3 gap-1 border-b border-slate-300 w-full bg-slate-200">
-        {["fibonacci", "video"].map((tab) => (
+        {categoryTabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setSelectedTab(tab)}
@@ -32,7 +33,7 @@ export default function TabComponent() {
       </div>
 
       {/* 선택된 탭에 따라 내용 렌더링 */}
-      <div className="mt-[60px] flex-1 overflow-y-auto bg-gray-100">
+      <div className="mt-[60px] flex flex-1 overflow-y-auto bg-gray-100 justify-center	">
         {selectedTab === "fibonacci" && <Fibonacci />}
         {selectedTab === "video" && <VideoPlayer />}
       </div>
