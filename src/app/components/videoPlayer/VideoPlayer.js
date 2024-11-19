@@ -14,7 +14,7 @@ const VideoPlayer = () => {
   return (
     <div className="w-2/4 h-2/6">
       {/* 탭 버튼 */}
-      <div className="flex my-10 gap-1">
+      <div className="flex my-10 gap-1 items-end ">
         {videoTabs.map(({ key, label }) => (
           <button
             key={key}
@@ -28,6 +28,9 @@ const VideoPlayer = () => {
             {label}
           </button>
         ))}
+        <p className="ml-3 mb-2 text-slate-600 text-sm">
+          * 탭을 이동하면 입력된 내용은 초기화됩니다.
+        </p>
       </div>
       {/* 직접 업로드 탭 */}
       {activeTab === "file" && <DirectUpload />}

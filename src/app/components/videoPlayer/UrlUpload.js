@@ -4,7 +4,6 @@ const UrlUpload = () => {
   const urlVideoRef = useRef(null);
   const [videoUrl, setVideoUrl] = useState("");
   const [urlDelay, setUrlDelay] = useState(0);
-  const [urlError, setUrlError] = useState(null);
 
   const extractYouTubeVideoID = (url) => {
     const videoIDPattern =
@@ -32,7 +31,6 @@ const UrlUpload = () => {
         const endTime = performance.now();
         const loadDelay = Math.round(endTime - startTime);
         setUrlDelay(loadDelay);
-        setUrlError(null);
       };
     } else {
       alert("유효하지 않은 YouTube URL입니다.");
@@ -44,7 +42,7 @@ const UrlUpload = () => {
     <div className="w-full h-full">
       <div className="flex gap-2">
         <input
-          type="text"
+          type="search"
           placeholder="YouTube URL을 입력하세요"
           className="w-full px-3"
           value={videoUrl}
